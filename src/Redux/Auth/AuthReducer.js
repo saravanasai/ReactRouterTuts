@@ -3,7 +3,7 @@ import { AuthAction } from "./AuthConstant"
 
 
 const initialSate={
-    is_auth:false,
+    is_auth:true,
     username:"",
     password:""
 }

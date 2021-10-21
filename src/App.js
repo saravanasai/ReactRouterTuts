@@ -1,5 +1,6 @@
 
 import './App.css';
+import Header from './Layouts/Header';
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      <Header />
     </div>
   );
 }

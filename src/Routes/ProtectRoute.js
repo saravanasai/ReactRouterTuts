@@ -1,18 +1,18 @@
 import { Component } from "react";
+import { useSelector } from "react-redux";
 import { Redirect, Route } from "react-router";
 
-const ProtectedRoute = ({is_auth:is_auth,components:components,...rest}) => {
-    return ( 
-        <Route {...rest} render={(props)=>{
-            is_auth ? <Component /> : (
-                <Redirect
-                  to={{
-                    pathname: "/login",
-                  }}
-                />
-              )
-        }} />
-        
+const ProtectedRoute = ({component: Component, ...rest }) => {
+  
+  const auth = useSelector(state => state.auth.is_auth)
+  return ( 
+      <Route
+      {...rest}
+      render={() => (
+        auth ? (<Component  />):(<Redirect to="/login" />)
+          
+      )}
+    />
      );
 }
  
